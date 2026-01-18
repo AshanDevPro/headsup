@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adivina el Patrimonio</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="app" id="app">
+    <section class="screen screen-start active" id="screen-start" aria-labelledby="title">
+      <div class="screen-bg start-bg">
+        <div class="screen-content">
+          <h1 id="title" class="title title-white">
+            <span class="title-line">Adivina el</span>
+            <span class="title-line">Patrimonio</span>
+          </h1>
+          <button class="btn btn-image" id="start-button" aria-label="Jugar">
+            <img class="play-button-img" src="assets/play-button.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen screen-instructions" id="screen-instructions" aria-labelledby="howto-title">
+      <div class="screen-bg howto-bg">
+        <div class="screen-content">
+          <h2 id="howto-title" class="title small howto-title">Como jugar?</h2>
+          <ul class="howto-list howto-list-white">
+            <li class="howto-card">
+              <span class="howto-line">Elige tu</span>
+              <span class="howto-line">compañero</span>
+            </li>
+            <li class="howto-card">
+              <span class="howto-line">Gira el celular hacia tu frente</span>
+              <span class="howto-line">(sin mirar la pantalla)</span>
+            </li>
+            <li class="howto-card">
+              <span class="howto-line">Espera pistas de tu compañero/a</span>
+              <span class="howto-line">y adivina la palabra en pantalla</span>
+            </li>
+          </ul>
+          <button class="btn btn-primary" id="howto-to-categories">SORTEAR PALABRA</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen screen-draw" id="screen-draw" aria-live="polite">
+      <div class="screen-bg draw-bg">
+        <div class="screen-content">
+          <div class="draw-bubble">Sorteando palabra...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen screen-game" id="screen-game" aria-live="polite">
+      <div class="screen-bg game-bg">
+        <div class="game-card" id="word-card">
+          <div>
+            <div class="word" id="current-word">Humitas</div>
+            <div class="game-info">
+              <div class="game-timer" id="timer">60</div>
+              <div class="game-score">Puntaje: <span id="score">0</span></div>
+            </div>
+          </div>
+          <img class="question-image" id="question-image" src="questionimages/Humitas.png" alt="Question image" />
+        </div>
+        <button class="game-action-btn game-action-wrong" id="wrong-btn" aria-label="Respuesta incorrecta">✗</button>
+        <button class="game-action-btn game-action-correct" id="correct-btn" aria-label="Respuesta correcta">✓</button>
+      </div>
+    </section>
+
+    <section class="screen screen-end" id="screen-end">
+      <div class="screen-bg end-bg">
+        <div class="screen-content">
+          <div class="end-score">Tu puntuación: <span id="final-score">0</span></div>
+          <div class="end-bubble">¿Quieres jugar de nuevo?</div>
+          <button class="btn btn-primary" id="play-again">Jugar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

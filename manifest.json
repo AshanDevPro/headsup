@@ -1,0 +1,9 @@
+{
+  "name": "Adivina el Patrimonio",
+  "short_name": "Adivina",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff3c4",
+  "theme_color": "#ff5c35",
+  "icons": []
+}
