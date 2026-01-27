@@ -102,21 +102,26 @@ function endGame() {
 }
 
 function nextWord() {
-  if (wordsQueue.length === 0 && activeCategory) {
-    wordsQueue = shuffle([...activeCategory.words]);
+  if (wordsQueue.length === 0) {
+    endGame();
+    return;
   }
-  const currentWord = wordsQueue.shift() || "Listos";
+  const currentWord = wordsQueue.shift();
   currentWordEl.textContent = currentWord;
 
   // Update the question image
-  if (currentWord !== "Listos") {
+  if (currentWord) {
     questionImageEl.src = `questionimages/${currentWord}.png`;
     questionImageEl.alt = currentWord;
   }
 }
 
 function shuffle(list) {
-  return list.sort(() => Math.random() - 0.5);
+  for (let i = list.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+  return list;
 }
 
 function handleSwipe(startX, endX) {
